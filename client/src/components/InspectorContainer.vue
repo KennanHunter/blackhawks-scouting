@@ -77,6 +77,7 @@ function deleteData() {
 
 function downloadData() {
     if (selectedEntry == undefined) return;
+    if (!downloadLink) return;
 
     // Generate the download link for the selected records, then trigger the download
     // If there are no records selected, they will all be included in the generated file

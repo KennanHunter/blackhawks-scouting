@@ -70,6 +70,7 @@ watchEffect(() => {
             .filter((e) => e.id.startsWith(index.toString()))
             .map((e) => e.validate())
             .includes(false);
+
         if (failed) {
             // Keep track of the first failed page
             validation.failedPage = i;

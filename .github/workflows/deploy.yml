@@ -32,6 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VITE_TBA_API_KEY: ${{ secrets.TBA_KEY }}
+      VITE_API_URI: https://api.scout.kennan.tech
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node

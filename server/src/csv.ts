@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const collateCSVs = (csvs: string[]): string => {
+export const collateCSVs = (...csvs: string[]): string => {
     csvs = z.array(z.string()).min(1).parse(csvs);
 
     const header = csvs[0].split("\n")[0];
