@@ -1,0 +1,10 @@
+name = "server"
+main = "src/index.ts"
+compatibility_date = "2023-02-21"
+
+kv_namespaces = [
+    { binding = "CSVStorage", id = "a704ef47752749328aefc668480c6a48", preview_id = "a704ef47752749328aefc668480c6a48" },
+]
+
+[vars]
+CSVStorageKey = "CSVStorageKey"
