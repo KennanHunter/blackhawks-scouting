@@ -1,151 +1,127 @@
 {
-  "heading": "Charged Up - 2023 (Pit Scouting)",
-  "logo": "logo.png",
-  "skipTeamSelection": true,
-  "pages": [
-    {
-      "name": "Team",
-      "widgets": [
+    "heading": "Charged Up - 2023 (Pit Scouting)",
+    "logo": "logo.png",
+    "skipTeamSelection": true,
+    "pages": [
         {
-          "name": "Team Number",
-          "type": "number"
+            "name": "Team",
+            "widgets": [
+                {
+                    "name": "Team Number",
+                    "type": "number"
+                },
+                {
+                    "name": "Drive Coach",
+                    "type": "text"
+                },
+                {
+                    "name": "Driver Names",
+                    "type": "text"
+                }
+            ]
         },
         {
-          "name": "Drive Coach",
-          "type": "text"
+            "name": "Robot",
+            "widgets": [
+                {
+                    "name": "Height",
+                    "type": "number"
+                },
+                {
+                    "name": "Length",
+                    "type": "number"
+                },
+                {
+                    "name": "Width",
+                    "type": "number"
+                },
+                {
+                    "name": "Wheel to bumper distance",
+                    "type": "number"
+                },
+                {
+                    "name": "Weight",
+                    "type": "number"
+                },
+                {
+                    "name": "Drivetrain",
+                    "type": "dropdown",
+                    "options": [
+                        "West Coast",
+                        "Swerve",
+                        "Butterfly",
+                        "Mecanum",
+                        "Other"
+                    ]
+                },
+                {
+                    "name": "Swerve Motor Type",
+                    "type": "dropdown",
+                    "options": ["Neo", "Falcon", "Cim"]
+                },
+                {
+                    "name": "Swerve Type",
+                    "type": "dropdown",
+                    "options": [
+                        "No swerve",
+                        "L1",
+                        "L2",
+                        "L3",
+                        "L4",
+                        "Neo",
+                        "Falcon",
+                        "Custom"
+                    ]
+                },
+                {
+                    "name": "Has Driver Camera",
+                    "type": "checkbox"
+                }
+            ]
         },
         {
-          "name": "Driver Names",
-          "type": "text"
-        }
-      ]
-    },
-    {
-      "name": "Robot",
-      "widgets": [
-        {
-          "name": "Height",
-          "type": "number"
-        },
-        {
-          "name": "Length",
-          "type": "number"
-        },
-        {
-          "name": "Width",
-          "type": "number"
-        },
-        {
-          "name": "Wheel to bumper distance",
-          "type": "number"
-        },
-        {
-          "name": "Weight",
-          "type": "number"
-        },
-        {
-          "name": "Drivetrain",
-          "type": "dropdown",
-          "options": [
-            "West Coast",
-            "Swerve",
-            "Butterfly",
-            "Mecanum",
-            "Other"
-          ]
-        },
-        {
-          "name": "Swerve Motor Type",
-          "type": "dropdown",
-          "options": [
-            "Neo",
-            "Falcon",
-            "Cim"
-          ]
-        },
-        {
-          "name": "Swerve Type",
-          "type": "dropdown",
-          "options": [
-            "No swerve",
-            "L1",
-            "L2",
-            "L3",
-            "L4",
-            "Neo",
-            "Falcon",
-            "Custom"
-          ]
-        },
-        {
-          "name": "Has Driver Camera",
-          "type": "checkbox"
-        }
-      ]
-    },
-    {
-      "name": "Match Play",
-      "widgets": [
-        {
-          "name": "Dock Time",
-          "type": "number"
-        },
-        {
-          "name": "Cycle time",
-          "type": "number"
-        },
-        {
-          "name": "Parking",
-          "type": "multicheckbox",
-          "options": [
-            "Parking",
-            "Docking",
-            "Engaging"
-          ]
-        },
-        {
-          "name": "Can Pick Up",
-          "type": "multicheckbox",
-          "options": [
-            "Cones",
-            "Tipped Cones",
-            "Cubes"
-          ]
-        },
-        {
-          "name": "Can Score In",
-          "type": "multicheckbox",
-          "options": [
-            "High",
-            "Medium",
-            "Low"
-          ]
-        },
-        {
-          "name": "Ways Robot Scores",
-          "type": "multicheckbox",
-          "options": [
-            "Manual Scoring",
-            "Auto Scoring"
-          ]
-        },
-        {
-          "name": "Pickup Locations",
-          "type": "multicheckbox",
-          "options": [
-            "Ground",
-            "Sub 1",
-            "Sub 2 Low",
-            "Sub 2 High"
-          ]
-        },
+            "name": "Match Play",
+            "widgets": [
+                {
+                    "name": "Dock Time",
+                    "type": "number"
+                },
+                {
+                    "name": "Cycle time",
+                    "type": "number"
+                },
+                {
+                    "name": "Parking",
+                    "type": "multicheckbox",
+                    "options": ["Parking", "Docking", "Engaging"]
+                },
+                {
+                    "name": "Can Pick Up",
+                    "type": "multicheckbox",
+                    "options": ["Cones", "Tipped Cones", "Cubes"]
+                },
+                {
+                    "name": "Can Score In",
+                    "type": "multicheckbox",
+                    "options": ["High", "Medium", "Low"]
+                },
+                {
+                    "name": "Ways Robot Scores",
+                    "type": "multicheckbox",
+                    "options": ["Manual Scoring", "Auto Scoring"]
+                },
+                {
+                    "name": "Pickup Locations",
+                    "type": "multicheckbox",
+                    "options": ["Ground", "Sub 1", "Sub 2 Low", "Sub 2 High"]
+                },
 
-        {
-          "name": "Comments",
-          "type": "textarea",
-          "colspan": 3
+                {
+                    "name": "Comments",
+                    "type": "textarea",
+                    "colspan": 3
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

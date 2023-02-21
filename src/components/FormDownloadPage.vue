@@ -1,22 +1,27 @@
 <template>
-  <FormPage title="Download Data" ref="page">
-    <FormGroup :label-type="LabelType.None" :colspan="2" align="center">
-      <button @click="clearForm">Save and Clear Form</button>
-    </FormGroup>
-    <FormGroup :label-type="LabelType.None">
-      <div style="height: 20px;"></div>
-    </FormGroup>
-    <FormGroup :label-type="LabelType.None" :colspan="2" align="center">
-      <span v-if="widgets.downloadLink === null">No Saved Data</span>
-      <a v-else :download="`scouted-${config.name}.csv`" :href="widgets.downloadLink">Download Saved CSV</a>
-    </FormGroup>
-    <FormGroup :label-type="LabelType.None" :colspan="2" align="center">
-      <RouterLink :to="{ name: 'inspector' }">Data Inspector</RouterLink>
-    </FormGroup>
-    <FormGroup :label-type="LabelType.None" :colspan="2" align="center">
-      <RouterLink :to="{ name: 'home' }">Home</RouterLink>
-    </FormGroup>
-  </FormPage>
+    <FormPage title="Download Data" ref="page">
+        <FormGroup :label-type="LabelType.None" :colspan="2" align="center">
+            <button @click="clearForm">Save and Clear Form</button>
+        </FormGroup>
+        <FormGroup :label-type="LabelType.None">
+            <div style="height: 20px"></div>
+        </FormGroup>
+        <FormGroup :label-type="LabelType.None" :colspan="2" align="center">
+            <span v-if="widgets.downloadLink === null">No Saved Data</span>
+            <a
+                v-else
+                :download="`scouted-${config.name}.csv`"
+                :href="widgets.downloadLink"
+                >Download Saved CSV</a
+            >
+        </FormGroup>
+        <FormGroup :label-type="LabelType.None" :colspan="2" align="center">
+            <RouterLink :to="{ name: 'inspector' }">Data Inspector</RouterLink>
+        </FormGroup>
+        <FormGroup :label-type="LabelType.None" :colspan="2" align="center">
+            <RouterLink :to="{ name: 'home' }">Home</RouterLink>
+        </FormGroup>
+    </FormPage>
 </template>
 
 <script setup lang="ts">
@@ -36,7 +41,7 @@ const page = ref<InstanceType<typeof FormPage>>();
 defineExpose(page);
 
 function clearForm() {
-  widgets.save();
-  router.go(0); // Reload the page
+    widgets.save();
+    router.go(0); // Reload the page
 }
 </script>

@@ -39,89 +39,80 @@ Configuration files are in JSON format with data contained within a top-level ob
 
 ```json
 {
-  "heading": "Rapid React - 2022 (Pit Scouting)",
-  "logo": "logo.png",
-  "skipTeamSelection": true,
-  "pages": [
-    {
-      "name": "Team",
-      "widgets": [
+    "heading": "Rapid React - 2022 (Pit Scouting)",
+    "logo": "logo.png",
+    "skipTeamSelection": true,
+    "pages": [
         {
-          "name": "Team Number",
-          "type": "number"
+            "name": "Team",
+            "widgets": [
+                {
+                    "name": "Team Number",
+                    "type": "number"
+                },
+                {
+                    "name": "Drive Coach",
+                    "type": "text"
+                },
+                {
+                    "name": "Driver Names",
+                    "type": "text"
+                }
+            ]
         },
         {
-          "name": "Drive Coach",
-          "type": "text"
+            "name": "Robot",
+            "widgets": [
+                {
+                    "name": "Height",
+                    "type": "number"
+                },
+                {
+                    "name": "Weight",
+                    "type": "number"
+                },
+                {
+                    "name": "Drivetrain",
+                    "type": "dropdown",
+                    "options": [
+                        "West Coast",
+                        "Swerve",
+                        "Butterfly",
+                        "Mecanum",
+                        "Other"
+                    ]
+                },
+                {
+                    "name": "Has Driver Camera",
+                    "type": "checkbox"
+                }
+            ]
         },
         {
-          "name": "Driver Names",
-          "type": "text"
+            "name": "Match Play",
+            "widgets": [
+                {
+                    "name": "Climb Time",
+                    "type": "number"
+                },
+                {
+                    "name": "Climb",
+                    "type": "radio",
+                    "options": ["None", "Low", "Mid", "High", "Traversal"]
+                },
+                {
+                    "name": "Aiming Method",
+                    "type": "radio",
+                    "options": ["Manual Targeting", "Automatic"]
+                },
+                {
+                    "name": "Comments",
+                    "type": "textarea",
+                    "colspan": 3
+                }
+            ]
         }
-      ]
-    },
-    {
-      "name": "Robot",
-      "widgets": [
-        {
-          "name": "Height",
-          "type": "number"
-        },
-        {
-          "name": "Weight",
-          "type": "number"
-        },
-        {
-          "name": "Drivetrain",
-          "type": "dropdown",
-          "options": [
-            "West Coast",
-            "Swerve",
-            "Butterfly",
-            "Mecanum",
-            "Other"
-          ]
-        },
-        {
-          "name": "Has Driver Camera",
-          "type": "checkbox"
-        }
-      ]
-    },
-    {
-      "name": "Match Play",
-      "widgets": [
-        {
-          "name": "Climb Time",
-          "type": "number"
-        },
-        {
-          "name": "Climb",
-          "type": "radio",
-          "options": [
-            "None",
-            "Low",
-            "Mid",
-            "High",
-            "Traversal"
-          ]
-        },
-        {
-          "name": "Aiming Method",
-          "type": "radio",
-          "options": [
-            "Manual Targeting",
-            "Automatic"
-          ]
-        },
-        {
-          "name": "Comments",
-          "type": "textarea",
-          "colspan": 3
-        }
-      ]
-    }
-  ]
+    ]
 }
 ```
 
@@ -241,9 +232,9 @@ The default option exports a value of `-1` and can be used in combination with `
 
 The dimensions to display the widget's image at, in pixels.
 
-- **If none are specified:** The image is displayed at actual size.
-- **If one is specified:** The image is resized to respect the dimension given, while preserving its aspect ratio.
-- **If both are specified:** The image is resized to respect both dimensions. Its aspect ratio is ignored.
+-   **If none are specified:** The image is displayed at actual size.
+-   **If one is specified:** The image is resized to respect the dimension given, while preserving its aspect ratio.
+-   **If both are specified:** The image is resized to respect both dimensions. Its aspect ratio is ignored.
 
 #### Positions
 
@@ -313,13 +304,13 @@ Each object associated with a widget's `validation` field requires the following
 
 How to compare a widget's value with the specified value(s) to determine if it passes validation. Can be any of:
 
-- `less`
-- `lessOrEqual`
-- `greater`
-- `greaterOrEqual`
-- `equal`
-- `inRange`
-- `outOfRange`
+-   `less`
+-   `lessOrEqual`
+-   `greater`
+-   `greaterOrEqual`
+-   `equal`
+-   `inRange`
+-   `outOfRange`
 
 `value`: array[number] if `comparison` is any of (`inRange`, `outOfRange`), number otherwise
 

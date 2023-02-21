@@ -1,9 +1,8 @@
 {
-  "npm.enableRunFromFolder": true,
-  "[typescript][vue][css]": {
-    "editor.rulers": [
-      120
-    ]
-  },
-  "css.format.newlineBetweenSelectors": false
+    "npm.enableRunFromFolder": true,
+    "[typescript][vue][css]": {
+        "editor.rulers": [120]
+    },
+    "css.format.newlineBetweenSelectors": false,
+    "cSpell.words": ["pinia", "vueuse"]
 }

@@ -1,13 +1,13 @@
 <template>
-  <div id="form-container">
-    <Suspense v-if="name">
-      <template #default>
-        <FormContainer />
-      </template>
-      <template #fallback>Loading form...</template>
-    </Suspense>
-    <p v-else>No Configuration Specified</p>
-  </div>
+    <div id="form-container">
+        <Suspense v-if="name">
+            <template #default>
+                <FormContainer />
+            </template>
+            <template #fallback>Loading form...</template>
+        </Suspense>
+        <p v-else>No Configuration Specified</p>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -23,10 +23,10 @@ config.name = name ?? "";
 
 <style>
 #form-container {
-  display: grid;
-  height: 100vh;
-  gap: 40px;
-  grid-template-rows: 1fr auto;
-  justify-items: center;
+    display: grid;
+    height: 100vh;
+    gap: 40px;
+    grid-template-rows: 1fr auto;
+    justify-items: center;
 }
 </style>

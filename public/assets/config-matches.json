@@ -1,131 +1,131 @@
 {
-  "heading": "Charged Up - 2023",
-  "logo": "logo.png",
-  "pages": [
-    {
-      "name": "Setup+Autonomous",
-      "widgets": [
+    "heading": "Charged Up - 2023",
+    "logo": "logo.png",
+    "pages": [
         {
-          "name": "Scouter Name",
-          "type": "text",
-          "colspan": 2
+            "name": "Setup+Autonomous",
+            "widgets": [
+                {
+                    "name": "Scouter Name",
+                    "type": "text",
+                    "colspan": 2
+                },
+                {
+                    "name": "Starting Position",
+                    "type": "positions",
+                    "file": "field.png",
+                    "height": 200,
+                    "colspan": 2,
+                    "allowMultiple": true
+                },
+                {
+                    "name": "Left Community",
+                    "type": "checkbox"
+                },
+                {
+                    "name": "Grid",
+                    "type": "positions",
+                    "file": "grid.png",
+                    "colspan": 2,
+                    "allowMultiple": true,
+                    "selectColor": "black",
+                    "prefix": "Auto"
+                },
+                {
+                    "type": "spacer",
+                    "height": 40
+                },
+                {
+                    "name": "Docked To Charging Station",
+                    "type": "checkbox",
+                    "labelColspan": 2
+                },
+                {
+                    "name": "Charging Station Engaged",
+                    "type": "checkbox",
+                    "labelColspan": 2
+                }
+            ]
         },
         {
-          "name": "Starting Position",
-          "type": "positions",
-          "file": "field.png",
-          "height": 200,
-          "colspan": 2,
-          "allowMultiple": true
+            "name": "Teleop",
+            "widgets": [
+                {
+                    "name": "Picked Up From",
+                    "type": "heading",
+                    "colspan": 5,
+                    "align": "center"
+                },
+                {
+                    "name": "Ground",
+                    "type": "spinbox"
+                },
+                {
+                    "name": "Sub 1",
+                    "type": "spinbox"
+                },
+                {
+                    "type": "spacer",
+                    "width": 20,
+                    "col": 3
+                },
+                {
+                    "name": "Sub 2 Low",
+                    "type": "spinbox",
+                    "row": 2,
+                    "col": 4
+                },
+                {
+                    "name": "Sub 2 High",
+                    "type": "spinbox",
+                    "col": 4
+                },
+                {
+                    "type": "spacer",
+                    "height": 40
+                },
+                {
+                    "name": "Grid",
+                    "type": "positions",
+                    "file": "grid.png",
+                    "colspan": 5,
+                    "allowMultiple": true,
+                    "selectColor": "black"
+                }
+            ]
         },
         {
-          "name": "Left Community",
-          "type": "checkbox"
-        },
-        {
-          "name": "Grid",
-          "type": "positions",
-          "file": "grid.png",
-          "colspan": 2,
-          "allowMultiple": true,
-          "selectColor": "black",
-          "prefix": "Auto"
-        },
-        {
-          "type": "spacer",
-          "height": 40
-        },
-        {
-          "name": "Docked To Charging Station",
-          "type": "checkbox",
-          "labelColspan": 2
-        },
-        {
-          "name": "Charging Station Engaged",
-          "type": "checkbox",
-          "labelColspan": 2
+            "name": "Endgame",
+            "widgets": [
+                {
+                    "name": "Parking",
+                    "type": "radio",
+                    "options": [
+                        "Docked+Engaged",
+                        "Docked Only",
+                        "Parked",
+                        "None"
+                    ],
+                    "default": 3
+                },
+                {
+                    "name": "Tipped Charging Station",
+                    "type": "checkbox"
+                },
+                {
+                    "name": "Robots Docked",
+                    "type": "spinbox",
+                    "max": 3
+                },
+                {
+                    "name": "Mechanical Failures",
+                    "type": "text"
+                },
+                {
+                    "name": "Comments",
+                    "type": "textarea"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "name": "Teleop",
-      "widgets": [
-        {
-          "name": "Picked Up From",
-          "type": "heading",
-          "colspan": 5,
-          "align": "center"
-        },
-        {
-          "name": "Ground",
-          "type": "spinbox"
-        },
-        {
-          "name": "Sub 1",
-          "type": "spinbox"
-        },
-        {
-          "type": "spacer",
-          "width": 20,
-          "col": 3
-        },
-        {
-          "name": "Sub 2 Low",
-          "type": "spinbox",
-          "row": 2,
-          "col": 4
-        },
-        {
-          "name": "Sub 2 High",
-          "type": "spinbox",
-          "col": 4
-        },
-        {
-          "type": "spacer",
-          "height": 40
-        },
-        {
-          "name": "Grid",
-          "type": "positions",
-          "file": "grid.png",
-          "colspan": 5,
-          "allowMultiple": true,
-          "selectColor": "black"
-        }
-      ]
-    },
-    {
-      "name": "Endgame",
-      "widgets": [
-        {
-          "name": "Parking",
-          "type": "radio",
-          "options": [
-            "Docked+Engaged",
-            "Docked Only",
-            "Parked",
-            "None"
-          ],
-          "default": 3
-        },
-        {
-          "name": "Tipped Charging Station",
-          "type": "checkbox"
-        },
-        {
-          "name": "Robots Docked",
-          "type": "spinbox",
-          "max": 3
-        },
-        {
-          "name": "Mechanical Failures",
-          "type": "text"
-        },
-        {
-          "name": "Comments",
-          "type": "textarea"
-        }
-      ]
-    }
-  ]
+    ]
 }

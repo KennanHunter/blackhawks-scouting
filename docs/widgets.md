@@ -144,15 +144,15 @@ Allows selection of a match and team. If `skipTeamSelection` is `false`, this pa
 
 **Exports:** This page exports four values:
 
-- `EventKey`: The Blue Alliance event key entered.
-- `MatchLevel`: The match level:
-  - Qualifications: `0`
-  - Quarterfinals: `1`
-  - Semifinals: `2`
-  - Finals: `3`
-- `MatchNumber`: The match number.
-- `Team`: The team information in the following order, delimited by commas:
-  - Alliance color (`Red` or `Blue`)
-  - Index within alliance (`1` to `3`)
-  - Team number
-  - Team name
+-   `EventKey`: The Blue Alliance event key entered.
+-   `MatchLevel`: The match level:
+    -   Qualifications: `0`
+    -   Quarterfinals: `1`
+    -   Semifinals: `2`
+    -   Finals: `3`
+-   `MatchNumber`: The match number.
+-   `Team`: The team information in the following order, delimited by commas:
+    -   Alliance color (`Red` or `Blue`)
+    -   Index within alliance (`1` to `3`)
+    -   Team number
+    -   Team name

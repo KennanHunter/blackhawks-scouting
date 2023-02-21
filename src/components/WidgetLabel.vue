@@ -4,7 +4,7 @@
 import { WidgetData } from "@/common/types";
 
 defineProps<{
-  data: WidgetData,
-  currentId: string
+    data: WidgetData;
+    currentId: string;
 }>();
 </script>

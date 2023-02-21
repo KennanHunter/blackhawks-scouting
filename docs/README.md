@@ -16,10 +16,10 @@ Black Hawks Scouting was created with the following goals in mind:
 
 Black Hawks Scouting is based around configuration files, which allow you to quickly create forms including, but not limited to:
 
-- Match Scouting
-- Pit Scouting
-- Forms for various seasons
-- Something else... (Surveys, Checklists, etc.)
+-   Match Scouting
+-   Pit Scouting
+-   Forms for various seasons
+-   Something else... (Surveys, Checklists, etc.)
 
 You can have multiple configurations side-by-side - they'll show up as separate links on the main menu and won't interfere with each other.
 
@@ -43,7 +43,7 @@ Black Hawks Scouting also provides a built-in Data Inspector allowing you to vie
 
 With internet often being unreliable at competitions, Black Hawks Scouting has the capability to work fully offline by making use of special browser features. Once you load it with an internet connection, it remains available on your device with the same URL, even without an internet connection or download.
 
-*Tip: You can use The Blue Alliance data offline too!* Once you load match information online from a form's Team Selection page, Black Hawks Scouting caches it in local storage. On subsequent scouting sessions, you can leave the Event Key field blank and press the Load button to use the cached data. This is faster than an online load and doesn't require internet.
+_Tip: You can use The Blue Alliance data offline too!_ Once you load match information online from a form's Team Selection page, Black Hawks Scouting caches it in local storage. On subsequent scouting sessions, you can leave the Event Key field blank and press the Load button to use the cached data. This is faster than an online load and doesn't require internet.
 
 ### Security
 
@@ -55,10 +55,10 @@ The app also supports the security features of your browser, working even with H
 
 Black Hawks Scouting can work on Windows, macOS, and Linux. In addition, mobile devices with Android and iOS are also supported. The following browser versions are recommended:
 
-- Google Chrome 100+
-- Microsoft Edge 100+
-- Mozilla Firefox 100+
-- Apple Safari 15.5+
+-   Google Chrome 100+
+-   Microsoft Edge 100+
+-   Mozilla Firefox 100+
+-   Apple Safari 15.5+
 
 ## Open Source
 
