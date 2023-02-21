@@ -4,5 +4,9 @@
         "editor.rulers": [120]
     },
     "css.format.newlineBetweenSelectors": false,
-    "cSpell.words": ["pinia", "vueuse"]
+    "cSpell.words": [
+        "blackhawks",
+        "pinia",
+        "vueuse"
+    ]
 }

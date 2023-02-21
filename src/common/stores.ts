@@ -87,7 +87,7 @@ export const useWidgetsStore = defineStore("widgets", () => {
         const header = values.map((i) => i.name).concat("ScoutedTime");
         const record = values
             .map((i) => stringify(i.value))
-            .concat(new Date().toString());
+            .concat(Date.now().toString());
 
         // Add to saved local storage
         const entry = savedData.get(config.name);

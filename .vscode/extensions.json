@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "aaron-bond.better-comments",
+        "irongeek.vscode-env",
+        "esbenp.prettier-vscode",
+        "mechatroner.rainbow-csv",
+        "vue.volar"
+    ]
+}
