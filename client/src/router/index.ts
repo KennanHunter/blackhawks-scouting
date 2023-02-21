@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import FormView from "@/views/FormView.vue";
 import HomeView from "@/views/HomeView.vue";
 import InspectorView from "@/views/InspectorView.vue";
+import UploadView from "@/views/UploadView.vue";
 
 const router = createRouter({
     history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,7 @@ const router = createRouter({
             name: "inspector",
             component: InspectorView,
         },
+        { path: "/upload", name: "upload", component: UploadView },
     ],
 });
 

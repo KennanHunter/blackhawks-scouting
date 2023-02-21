@@ -6,8 +6,11 @@
     "css.format.newlineBetweenSelectors": false,
     "cSpell.words": [
         "blackhawks",
+        "colspan",
         "hono",
         "pinia",
+        "rowspan",
+        "VITE",
         "vueuse"
     ]
 }

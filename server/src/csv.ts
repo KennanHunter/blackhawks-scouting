@@ -1,11 +1,9 @@
 import { z } from "zod";
 
 export const collateCSVs = (...csvs: string[]): string => {
-    csvs = z.array(z.string()).min(1).parse(csvs);
-
     const header = csvs[0].split("\n")[0];
 
-    const rows = csvs
+    const records = csvs
         .map((val) => val.split("\n").slice(1))
         .flat()
         .sort((a, b) => {
@@ -15,5 +13,5 @@ export const collateCSVs = (...csvs: string[]): string => {
             return aTimestamp - bTimestamp;
         });
 
-    return header + "\n" + rows.join("\n");
+    return [header, ...records].join("\n");
 };

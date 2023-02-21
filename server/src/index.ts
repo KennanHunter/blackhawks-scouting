@@ -11,7 +11,12 @@ export type Env = {
 
 const app = new Hono<{ Bindings: Env }>();
 
-app.use("*", cors());
+app.use(
+    "/*",
+    cors({
+        origin: "*",
+    })
+);
 
 const uploadSchema = () =>
     z.object({
@@ -21,7 +26,7 @@ const uploadSchema = () =>
 export type uploadSchema = z.infer<ReturnType<typeof uploadSchema>>;
 
 app.post("/upload", async (ctx) => {
-    const body = uploadSchema().parse(ctx.req.parseBody());
+    const body = uploadSchema().parse(await ctx.req.parseBody());
 
     const resultingCSV = collateCSVs(await getCSVfromDB(ctx.env), ...body.csvs);
 
@@ -31,14 +36,14 @@ app.post("/upload", async (ctx) => {
 });
 
 app.get("/get", async (ctx) =>
-    ctx.text(await getCSVfromDB(ctx.env), 201, {
+    ctx.text(await getCSVfromDB(ctx.env), 200, {
         "Content-Type": "text/csv",
     })
 );
 
 app.get("/", (ctx) =>
-    ctx.html(`
-<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css"/>
+    ctx.html(
+        `<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css"/>
     
 <h1>Scouting App Synchronizer API</h1>
 
@@ -46,7 +51,8 @@ app.get("/", (ctx) =>
 <br />
 <a href="https://github.com/KennanHunter/blackhawks-scouting">Github</a>
 <br />
-<a href="/get">Get CSV</a>`)
+<a href="/get">Get CSV</a>`
+    )
 );
 
 export default {

@@ -15,6 +15,12 @@
             <RouterLink :to="{ name: 'inspector' }">Data Inspector</RouterLink>
         </li>
     </ul>
+    <h2>Kennan's Utils</h2>
+    <ul class="link-list">
+        <li>
+            <RouterLink :to="{ name: 'upload' }">CSV Upload</RouterLink>
+        </li>
+    </ul>
 </template>
 
 <script setup lang="ts">
