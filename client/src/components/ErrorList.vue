@@ -1,11 +1,18 @@
 <template>
-    <button id="opener" v-if="errors.length > 0" @click="errorList.showModal()">
+    <button
+        id="opener"
+        v-if="errors.length > 0"
+        @click="errorList ? errorList.showModal() : undefined"
+    >
         {{ errors.length }} {{ label }}
     </button>
     <dialog ref="errorList" id="dialog">
         <div id="dialog-header">
             <h4 id="dialog-title">Error List</h4>
-            <button id="dialog-close" @click="errorList.close()">
+            <button
+                id="dialog-close"
+                @click="errorList ? errorList.close() : undefined"
+            >
                 <img src="@/assets/close.svg" alt="Close" />
             </button>
         </div>

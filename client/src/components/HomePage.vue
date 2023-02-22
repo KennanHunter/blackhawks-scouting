@@ -20,6 +20,11 @@
         <li>
             <RouterLink :to="{ name: 'upload' }">CSV Upload</RouterLink>
         </li>
+        <li>
+            <RouterLink :to="{ name: 'remoteInspector' }">
+                View Remote Data
+            </RouterLink>
+        </li>
     </ul>
 </template>
 

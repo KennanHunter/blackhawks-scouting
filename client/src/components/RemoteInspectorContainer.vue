@@ -1,21 +1,10 @@
 <template>
     <div id="controls-container">
-        <h4 class="notice">Note: Local Data</h4>
+        <h4 class="notice">Note: Remote Data (Last fetched {{}})</h4>
         <RouterLink :to="{ name: 'home' }" style="margin-right: 40px"
             >Home</RouterLink
         >
-        <span v-if="widgets.savedData.size === 0">&lt;No Entries&gt;</span>
-        <template v-else>
-            <label for="entry-select">Entry</label>
-            <select id="entry-select" v-model.number="selectedIdx">
-                <option
-                    v-for="[i, name] of entries.entries()"
-                    :key="i"
-                    :value="i"
-                >
-                    {{ name }}
-                </option>
-            </select>
+        <template>
             <button @click="deleteData">Delete</button>
             <button @click="downloadData">Download</button>
             <button @click="clearData">Clear All</button>
@@ -33,45 +22,34 @@
 </template>
 
 <script setup lang="ts">
+import { SavedData } from "@/common/stores";
+import { onMounted } from "vue";
 import InspectorTable from "./InspectorTable.vue";
-import { useWidgetsStore } from "@/common/stores.js";
 
-const widgets = useWidgetsStore();
+let savedData = $ref<SavedData>();
+
+onMounted(async () => {
+    const res = await fetch(import.meta.env.VITE_API_URI + "/get").then((val) =>
+        val.text()
+    );
+
+    savedData = {
+        header: res.split("\n")[0].split('"'),
+        values: res
+            .split("\n")
+            .map((val) => val.split(","))
+            .slice(1),
+    } as SavedData;
+});
+
 let selectedIdx = $ref(0); // The index of the entry selected in the combobox
 
 const downloadLink = $ref<HTMLAnchorElement>();
 const selectedRecords = $ref(new Set<number>());
 const hasSelectedRecords = $computed(() => selectedRecords.size > 0);
 
-const entries = $computed(() => [...widgets.savedData.keys()]); // The entries in local storage
-const selectedEntry = $computed(() =>
-    widgets.savedData.get(entries[selectedIdx])
-); // The selected entry
-
-// Filters records in the selected entry based on the user selection.
-// If there are no records selected, the filter directly uses the given state, returning either all or no records.
-const filterRecords = (state: boolean) =>
-    selectedEntry === undefined
-        ? []
-        : selectedEntry.values.filter((_v, i) =>
-              hasSelectedRecords ? selectedRecords.has(i) === state : state
-          );
-
 function deleteData() {
-    if (selectedEntry === undefined) return;
-
-    if (
-        !confirm(
-            `Delete ${
-                hasSelectedRecords ? "the selected" : "all"
-            } records in this entry permanently?`
-        )
-    )
-        return;
-
-    // Discard out the selected records
-    // If there are none selected, they are all deleted
-    selectedEntry.values = filterRecords(false);
+    if (!confirm(`Delete all records permanently?`)) return;
 
     selectedRecords.clear();
 }
@@ -93,7 +71,7 @@ function clearData() {
     if (!confirm("Clear all saved entries in local storage permanently?"))
         return;
 
-    widgets.savedData.clear();
+    savedData?.clear();
     selectedIdx = 0; // Reset selected index
 }
 </script>

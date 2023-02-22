@@ -26,7 +26,7 @@ const uploadSchema = () =>
 export type uploadSchema = z.infer<ReturnType<typeof uploadSchema>>;
 
 app.post("/upload", async (ctx) => {
-    const body = uploadSchema().parse(await ctx.req.parseBody());
+    const body = uploadSchema().parse(await ctx.req.json());
 
     const resultingCSV = collateCSVs(await getCSVfromDB(ctx.env), ...body.csvs);
 
