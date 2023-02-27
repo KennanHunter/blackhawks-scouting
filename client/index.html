@@ -14,11 +14,17 @@
         <link rel="mask-icon" href="icons/mask-icon.svg" color="#292929" />
         <meta name="theme-color" content="#292929" />
     </head>
-    <body>
+    <body id="body">
         <noscript
             >This app uses JavaScript. Please enable it to continue.</noscript
         >
         <div id="app"></div>
         <script type="module" src="/src/main.ts"></script>
+        <script defer>
+            // Don't ask
+            if (document.URL.split("/").slice(3).join("").includes("egg")) {
+                document.getElementById("body").classList.add("egg");
+            }
+        </script>
     </body>
 </html>

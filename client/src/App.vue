@@ -24,6 +24,13 @@ onErrorCaptured((e) => {
     --input-color: #1c1c1c;
 }
 
+.egg {
+    --text-color: #1c1c1c;
+    background-image: url("https://eggfrid.ge/img/fridge-0.jpg");
+    background-position: center;
+    background-repeat: stretch;
+}
+
 * {
     color: var(--text-color);
     box-sizing: border-box;

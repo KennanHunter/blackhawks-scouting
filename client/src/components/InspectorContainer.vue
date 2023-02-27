@@ -1,9 +1,9 @@
 <template>
     <div id="controls-container">
         <h4 class="notice">Note: Local Data</h4>
-        <RouterLink :to="{ name: 'home' }" style="margin-right: 40px"
-            >Home</RouterLink
-        >
+        <RouterLink :to="{ name: 'home' }" style="margin-right: 40px">
+            Home
+        </RouterLink>
         <span v-if="widgets.savedData.size === 0">&lt;No Entries&gt;</span>
         <template v-else>
             <label for="entry-select">Entry</label>

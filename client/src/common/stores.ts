@@ -1,8 +1,9 @@
-import { Ref } from "vue";
-import { ConfigData, WidgetData } from "./types";
-import { defineStore } from "pinia";
-import { isFailed, TBAData } from "./tba";
+import { CSV } from "@/util/csv";
 import { useStorage } from "@vueuse/core";
+import { defineStore } from "pinia";
+import { Ref } from "vue";
+import { isFailed, TBAData } from "./tba";
+import { ConfigData, WidgetData } from "./types";
 
 interface WidgetValue {
     readonly name: string;
@@ -43,16 +44,8 @@ export const useWidgetsStore = defineStore("widgets", () => {
 
     // Creates a download link for a given data object.
     function makeDownloadLink(data: SavedData): string {
-        // Transforms an array of strings into valid CSV by escaping quotes, then joining each value.
-        // https://en.wikipedia.org/wiki/Comma-separated_values
-        const escape = (s: string[]) =>
-            s.map((i) => `"${i.replaceAll('"', '""')}"`).join();
-
-        // Escape the header and list of records, then put them together into a blob for downloading
-        const header = escape(data.header);
-        const records = data.values.map(escape);
         return URL.createObjectURL(
-            new Blob([[header, ...records].join("\n")], { type: "text/csv" })
+            new Blob([CSV.serialize(data)], { type: "text/csv" })
         );
     }
 
