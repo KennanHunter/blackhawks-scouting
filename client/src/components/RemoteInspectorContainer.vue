@@ -25,8 +25,8 @@ import InspectorTable from "./InspectorTable.vue";
 let savedData = $ref<SavedData>();
 
 onMounted(async () => {
-    const res = await fetch(import.meta.env.VITE_API_URI + "/get").then((val) =>
-        val.text()
+    const res = await fetch(import.meta.env.VITE_API_URI + "/get").then(
+        (value) => value.text()
     );
 
     savedData = CSV.deserialize(res);

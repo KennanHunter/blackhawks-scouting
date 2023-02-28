@@ -6,7 +6,7 @@
 <script setup lang="ts">
 import { useWidgetsStore } from "@/common/stores";
 import { watch } from "vue";
-import { WidgetData } from "@/common/types";
+import { WidgetData } from "shared";
 
 interface Point {
     readonly x: number;

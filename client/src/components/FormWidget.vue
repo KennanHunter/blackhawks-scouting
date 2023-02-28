@@ -19,7 +19,7 @@
 <script setup lang="ts">
 import FormGroup from "@/components/FormGroup.vue";
 import { has, pick } from "lodash";
-import { LabelType, WidgetData } from "@/common/types";
+import { LabelType, WidgetData } from "shared";
 import { useWidgetsStore } from "@/common/stores";
 import WidgetDropdown from "@/components/WidgetDropdown.vue";
 import WidgetHeading from "@/components/WidgetHeading.vue";

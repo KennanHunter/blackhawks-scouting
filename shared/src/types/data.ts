@@ -60,3 +60,8 @@ export enum LabelType {
     LabelTag,
     PlainText,
 }
+
+export interface SavedData {
+    header: string[]; // Each element is a value in the CSV header
+    values: string[][]; // Each element is a CSV record, each element in a record is a widget value
+}

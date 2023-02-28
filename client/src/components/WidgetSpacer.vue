@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { WidgetData } from "@/common/types";
+import { WidgetData } from "shared";
 
 defineProps<{
     data: WidgetData;

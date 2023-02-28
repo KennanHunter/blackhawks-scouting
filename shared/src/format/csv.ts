@@ -1,4 +1,4 @@
-import { SavedData } from "@/common/stores";
+import { SavedData } from "../types/data";
 
 export const CSV = {
     serialize: (data: SavedData) => {
@@ -14,10 +14,8 @@ export const CSV = {
     deserialize: (serializedForm: string): SavedData => {
         const lines = serializedForm.split("\n");
 
-        const stringMatchingRegex = new RegExp(/(?<=((?<=[\s,.:;"']|^)["']))(?:(?=(\\?))\2.)*?(?=\1)/gmu);
-   
         const extractFromQuotations = (s: string): string[] =>
-          s.match(stringMatchingRegex) as string[] || []
+            (s.split(/(?<=(?<!\\)"),/gmu).splice(1, -1) as string[]) || [];
 
         const header = extractFromQuotations(lines[0]);
         const records = lines.slice(1).map((val) => extractFromQuotations(val));

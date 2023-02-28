@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { LabelType } from "@/common/types";
+import { LabelType } from "shared";
 import { useWidgetsStore } from "@/common/stores";
 
 type PosName = "row" | "col";

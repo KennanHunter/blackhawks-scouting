@@ -3,16 +3,11 @@ import { useStorage } from "@vueuse/core";
 import { defineStore } from "pinia";
 import { Ref } from "vue";
 import { isFailed, TBAData } from "./tba";
-import { ConfigData, WidgetData } from "./types";
+import { ConfigData, WidgetData, SavedData } from "shared";
 
 interface WidgetValue {
     readonly name: string;
     readonly value: Ref;
-}
-
-export interface SavedData {
-    header: string[]; // Each element is a value in the CSV header
-    values: string[][]; // Each element is a CSV record, each element in a record is a widget value
 }
 
 // Store to contain configuration data for the scouting form
