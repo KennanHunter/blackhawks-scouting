@@ -64,7 +64,7 @@ export default {
                             body,
                         }
                     ).then((val) => {
-                        console.dir(val);
+                        console.dir({ val });
                     });
                 } catch (error) {
                     console.error(error);
