@@ -1,9 +1,8 @@
-import { CSV } from "@/util/csv";
 import { useStorage } from "@vueuse/core";
 import { defineStore } from "pinia";
 import { Ref } from "vue";
 import { isFailed, TBAData } from "./tba";
-import { ConfigData, WidgetData, SavedData } from "shared";
+import { ConfigData, WidgetData, SavedData, CSV } from "@scout/shared";
 
 interface WidgetValue {
     readonly name: string;

@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import { useWidgetsStore } from "@/common/stores";
-import { WidgetData } from "shared";
+import { WidgetData }from "@scout/shared";
 
 const props = defineProps<{
     data: WidgetData;

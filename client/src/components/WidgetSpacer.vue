@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { WidgetData } from "shared";
+import { WidgetData }from "@scout/shared";
 
 defineProps<{
     data: WidgetData;

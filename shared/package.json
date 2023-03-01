@@ -4,6 +4,7 @@
     "license": "MIT",
     "main": "src/index.ts",
     "devDependencies": {
+        "@scout/shared": "workspace:*",
         "@types/node": "^18.11.18",
         "typescript": "^4.9.5"
     }

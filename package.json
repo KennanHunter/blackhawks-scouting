@@ -1,12 +1,13 @@
 {
+    "name": "scout",
     "private": true,
     "workspaces": [
+        "@scout/shared",
         "@scout/server",
-        "@scout/client",
-        "@scout/shared"
+        "@scout/client"
     ],
     "scripts": {
-        "dev": "concurrently -n client,server -c blue,green \"yarn --cwd client dev\" \"yarn --cwd server dev\""
+        "dev": "concurrently -n client,server -c blue,green \"pnpm --filter @scout/client dev\" \"pnpm --filter @scout/server dev\""
     },
     "devDependencies": {
         "concurrently": "^7.6.0"

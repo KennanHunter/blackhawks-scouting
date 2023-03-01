@@ -17,8 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { SavedData } from "@/common/stores";
-import { CSV } from "@/util/csv";
+import { CSV, SavedData } from "@scout/shared";
 import { onMounted } from "vue";
 import InspectorTable from "./InspectorTable.vue";
 

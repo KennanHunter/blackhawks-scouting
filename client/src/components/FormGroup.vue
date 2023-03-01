@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { LabelType } from "shared";
+import { LabelType }from "@scout/shared";
 import { useWidgetsStore } from "@/common/stores";
 
 type PosName = "row" | "col";

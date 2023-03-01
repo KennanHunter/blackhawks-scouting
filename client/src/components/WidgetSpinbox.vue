@@ -17,7 +17,7 @@
 <script setup lang="ts">
 import { clamp, inRange } from "lodash";
 import { useWidgetsStore } from "@/common/stores";
-import { WidgetData } from "shared";
+import { WidgetData }from "@scout/shared";
 
 const props = defineProps<{
     data: WidgetData;

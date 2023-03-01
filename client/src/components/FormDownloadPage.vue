@@ -27,7 +27,7 @@
 <script setup lang="ts">
 import FormPage from "./FormPage.vue";
 import FormGroup from "./FormGroup.vue";
-import { LabelType } from "shared";
+import { LabelType }from "@scout/shared";
 import { ref } from "vue";
 import { useConfigStore, useWidgetsStore } from "@/common/stores";
 import { useRouter } from "vue-router";
